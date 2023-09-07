@@ -8,6 +8,8 @@
 
 # Contents
 
+- [asdf-scala-cli  ](#asdf-scala-cli--)
+- [Contents](#contents)
 - [Dependencies](#dependencies)
 - [Install](#install)
 - [Contributing](#contributing)
@@ -15,10 +17,7 @@
 
 # Dependencies
 
-**TODO: adapt this section**
-
-- `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- `bash`, `curl`, `gzip`: generic POSIX utilities.
 
 # Install
 

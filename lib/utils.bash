@@ -2,10 +2,9 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for scala-cli.
 GH_REPO="https://github.com/VirtusLab/scala-cli"
 TOOL_NAME="scala-cli"
-TOOL_TEST="scala-cli --help"
+TOOL_TEST="scala-cli version"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"
@@ -31,18 +30,29 @@ list_github_tags() {
 }
 
 list_all_versions() {
-	# TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-	# Change this function if scala-cli has other means of determining installable versions.
 	list_github_tags
 }
 
 download_release() {
-	local version filename url
+	local version filename url arch os
 	version="$1"
 	filename="$2"
-
-	# TODO: Adapt the release URL convention for scala-cli
-	url="$GH_REPO/archive/v${version}.tar.gz"
+	arch="$(uname -m)"
+	if [[ "$arch" == 'arm64' ]]; then
+		arch='aarch64'
+	else
+		arch='x86_64'
+	fi
+	os="$(uname -s)"
+	case $os in
+		'Linux')
+			url="$GH_REPO/releases/download/v${version}/scala-cli-$arch-pc-linux.gz"
+			;;
+		'Darwin')
+			url="$GH_REPO/releases/download/v${version}/scala-cli-$arch-apple-darwin.gz"
+			;;
+		*) ;;
+	esac
 
 	echo "* Downloading $TOOL_NAME release $version..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
@@ -61,7 +71,6 @@ install_version() {
 		mkdir -p "$install_path"
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
-		# TODO: Assert scala-cli executable exists.
 		local tool_cmd
 		tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
 		test -x "$install_path/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."
