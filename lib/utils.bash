@@ -45,13 +45,13 @@ download_release() {
 	fi
 	os="$(uname -s)"
 	case $os in
-		'Linux')
-			url="$GH_REPO/releases/download/v${version}/scala-cli-$arch-pc-linux.gz"
-			;;
-		'Darwin')
-			url="$GH_REPO/releases/download/v${version}/scala-cli-$arch-apple-darwin.gz"
-			;;
-		*) ;;
+	'Linux')
+		url="$GH_REPO/releases/download/v${version}/scala-cli-$arch-pc-linux.gz"
+		;;
+	'Darwin')
+		url="$GH_REPO/releases/download/v${version}/scala-cli-$arch-apple-darwin.gz"
+		;;
+	*) ;;
 	esac
 
 	echo "* Downloading $TOOL_NAME release $version..."
