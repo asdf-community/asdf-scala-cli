@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-scala-cli [![Build](https://github.com/rlemaitre/asdf-scala-cli/actions/workflows/build.yml/badge.svg)](https://github.com/rlemaitre/asdf-scala-cli/actions/workflows/build.yml) [![Lint](https://github.com/rlemaitre/asdf-scala-cli/actions/workflows/lint.yml/badge.svg)](https://github.com/rlemaitre/asdf-scala-cli/actions/workflows/lint.yml)
+# asdf-scala-cli [![Build](https://github.com/asdf-community/asdf-scala-cli/actions/workflows/build.yml/badge.svg)](https://github.com/asdf-community/asdf-scala-cli/actions/workflows/build.yml) [![Lint](https://github.com/asdf-community/asdf-scala-cli/actions/workflows/lint.yml/badge.svg)](https://github.com/asdf-community/asdf-scala-cli/actions/workflows/lint.yml)
 
 [scala-cli](https://scala-cli.virtuslab.org/docs/overview) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -26,7 +26,7 @@ Plugin:
 ```shell
 asdf plugin add scala-cli
 # or
-asdf plugin add scala-cli https://github.com/rlemaitre/asdf-scala-cli.git
+asdf plugin add scala-cli https://github.com/asdf-community/asdf-scala-cli.git
 ```
 
 scala-cli:
@@ -52,7 +52,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/rlemaitre/asdf-scala-cli/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/asdf-community/asdf-scala-cli/graphs/contributors)!
 
 # License
 
