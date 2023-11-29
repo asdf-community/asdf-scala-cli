@@ -38,7 +38,7 @@ download_release() {
 	version="$1"
 	filename="$2"
 	arch="$(uname -m)"
-	if [[ "$arch" == 'arm64' ]]; then
+	if [[ "$arch" == 'arm64' || "$arch" == 'aarch64' ]]; then
 		arch='aarch64'
 	else
 		arch='x86_64'
